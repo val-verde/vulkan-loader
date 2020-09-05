@@ -59,6 +59,9 @@ typedef struct {
 #ifdef VK_USE_PLATFORM_VI_NN
         VkIcdSurfaceVi vi_surf;
 #endif  // VK_USE_PLATFORM_VI_NN
+#ifdef VK_USE_PLATFORM_ANDROID_KHR
+        VkIcdSurfaceAndroid android_surf;
+#endif // VK_USE_PLATFORM_ANDROID_KHR
         VkIcdSurfaceDisplay display_surf;
         VkIcdSurfaceHeadless headless_surf;
     };
@@ -170,6 +173,10 @@ VKAPI_ATTR VkBool32 VKAPI_CALL terminator_GetPhysicalDeviceScreenPresentationSup
 VKAPI_ATTR VkResult VKAPI_CALL terminator_CreateViSurfaceNN(VkInstance instance, const VkViSurfaceCreateInfoNN *pCreateInfo,
                                                             const VkAllocationCallbacks *pAllocator, VkSurfaceKHR *pSurface);
 #endif  // VK_USE_PLATFORM_VI_NN
+#ifdef VK_USE_PLATFORM_ANDROID_KHR
+VKAPI_ATTR VkResult VKAPI_CALL terminator_CreateAndroidSurfaceKHR(VkInstance instance, const VkAndroidSurfaceCreateInfoKHR *pCreateInfo,
+                                                                  const VkAllocationCallbacks *pAllocator, VkSurfaceKHR *pSurface);
+#endif
 VKAPI_ATTR VkResult VKAPI_CALL terminator_GetPhysicalDeviceDisplayPropertiesKHR(VkPhysicalDevice physicalDevice,
                                                                                 uint32_t *pPropertyCount,
                                                                                 VkDisplayPropertiesKHR *pProperties);
