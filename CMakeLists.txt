@@ -87,6 +87,10 @@ if(APPLE)
     set(CMAKE_MACOSX_RPATH 1)
 endif()
 
+if(WIN32)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DSTRSAFE_NO_DEPRECATE")
+endif()
+
 if(WIN32 AND CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     # Windows: if install locations not set by user, set install prefix to "<build_dir>\install".
     set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "default install path" FORCE)
