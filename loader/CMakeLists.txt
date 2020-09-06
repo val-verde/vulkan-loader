@@ -203,7 +203,7 @@ else() # i.e.: Linux
         endif()
     endif()
 
-    if(ASSEMBLER_WORKS)
+    if(ASSEMBLER_WORKS AND NOT ANDROID)
         add_executable(asm_offset asm_offset.c)
         target_link_libraries(asm_offset loader_specific_options)
         add_custom_command(OUTPUT gen_defines.asm DEPENDS asm_offset COMMAND asm_offset GAS)
