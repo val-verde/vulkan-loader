@@ -187,7 +187,7 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
     endif()
     set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
     try_compile(ASSEMBLER_WORKS ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/asm_test.S)
-    if(ASSEMBLER_WORKS)
+    if(ASSEMBLER_WORKS AND NOT ANDROID)
         set(OPT_LOADER_SRCS ${OPT_LOADER_SRCS} unknown_ext_chain_gas.S)
         add_executable(asm_offset asm_offset.c)
         target_link_libraries(asm_offset Vulkan::Headers)
