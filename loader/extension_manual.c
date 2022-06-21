@@ -20,11 +20,14 @@
  * Author: Charles Giessen <charles@lunarg.com>
  */
 
+#include "allocation.h"
 #include "extension_manual.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include <vulkan/vk_icd.h>
 
 #include "allocation.h"
 #include "debug_utils.h"

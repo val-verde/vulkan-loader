@@ -26,9 +26,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "allocation.h"
 #include <vulkan/vk_icd.h>
 
-#include "allocation.h"
 #include "loader.h"
 #include "log.h"
 #include "vk_loader_platform.h"

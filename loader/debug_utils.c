@@ -32,10 +32,10 @@
 #else
 #endif
 
+#include "allocation.h"
 #include "vulkan/vk_layer.h"
 #include "vk_object_types.h"
 
-#include "allocation.h"
 #include "debug_utils.h"
 #include "log.h"
 #include "loader.h"
