@@ -3003,6 +3003,7 @@ static VkResult read_data_files_in_search_paths(const struct loader_instance *in
         if (search_path_size == 2) {
             goto out;
         }
+       (void)relative_location;
 #else  // !_WIN32
         }
 
